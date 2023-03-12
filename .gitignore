@@ -1,0 +1,10 @@
+# Python-related files and directories
+cpp_env/
+__pycache__/
+
+# Django-related files and directories
+db.sqlite3
+media/
+
+# MySQL
+db/
