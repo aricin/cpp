@@ -4,10 +4,11 @@ services:
     image: mysql:8
     ports:
       - "3306:3306"
+    env_file: .env
     environment:
-      MYSQL_DATABASE: mydatabase
-      MYSQL_PASSWORD: some_password
-      MYSQL_ROOT_PASSWORD: some_password
+      MYSQL_DATABASE: ${MYSQL_DB_NAME:-cpp_db}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-some_password}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-some_password}
       # MYSQL_ROOT_HOST: '%'
     volumes:
       - ./db:/var/lib/mysql
